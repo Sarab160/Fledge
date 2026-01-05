@@ -153,7 +153,7 @@ useEffect(() => {
         qrCodeRef.current.appendChild(canvas);
         QRCode.toCanvas(
           canvas,
-          `https://Fledge.vercel.app/quiz?id=${quizIdRef.current}`, // <-- /quiz route
+          `https://fledge.vercel.app/quiz?id=${quizIdRef.current}`, // <-- /quiz route
           { width: 220 }
         );
         
