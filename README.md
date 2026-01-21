@@ -1,36 +1,143 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 FLEDGE — Smart Quiz Builder & Performance Prediction Platform
 
-## Getting Started
+FLEDGE is a full-stack smart learning platform that allows users to **create quizzes**, **share them via QR codes**, **let students solve quizzes on any device**, and **instantly view results**.  
+It also includes an **AI-powered performance prediction system** using Machine Learning.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 📌 Key Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 🔐 Authentication System
+- **Login**
+- **Signup**
+- **Forgot Password**
+- Authentication is done using **Email + CNIC matching**
+- User session maintained via **Local Storage**
+- User details fetched securely from **Supabase Database**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 🧠 Quiz Management System
+#### 👨‍🏫 Quiz Creator (User)
+- Create quizzes with:
+  - Multiple questions
+  - Multiple options
+  - Correct answers
+  - Timer
+- Generate **unique quiz links**
+- Generate **QR Code** for each quiz
+- View all created quizzes
+- View quiz results
+- **Delete quizzes** anytime
 
-## Learn More
+#### 🎓 Student (Quiz Solver)
+- Solve quizzes using:
+  - Direct quiz link
+  - **QR Code scan on another device**
+- Timer-based quiz solving
+- Instant result after submission
+- Auto evaluation of answers
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 📊 Instant Results & Analytics
+- Automatic score calculation
+- Result shown immediately after quiz completion
+- All quiz attempts stored in database
+- User can view:
+  - Quiz history
+  - Student results
+  - Performance summaries
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+### 🤖 Student Performance Prediction (Machine Learning)
+- Predict student performance based on:
+  - Study hours
+  - Attendance
+  - Previous scores
+  - Other academic features
+- Backend built using **Flask (Python)**
+- Machine Learning model used for prediction
+- Frontend communicates with Flask API
+- Prediction results shown instantly
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🧱 Tech Stack
+
+### 🌐 Frontend
+- **Next.js (App Router)**
+- **React**
+- **TypeScript**
+- **Tailwind CSS**
+- **QR Code Generation**
+- **Client-side Routing**
+
+### 🔙 Backend
+- **Flask (Python)**
+- REST APIs for ML prediction
+- Model trained on student performance dataset
+
+### 🗄️ Database
+- **Supabase**
+- Tables include:
+  - `app_users`
+  - `quizzes`
+  - `questions`
+  - `quiz_attempts`
+  - `predictions`
+
+### 🧠 Machine Learning
+- Scikit-learn
+- Pandas
+- NumPy
+- Trained model served via Flask
+
+---
+
+## 📂 Project Structure
+
+FLEDGE/
+│
+├── app/
+│ ├── login/
+│ ├── signup/
+│ ├── forgot/
+│ ├── quiz/
+│ ├── prediction/
+│ ├── page.tsx
+│ ├── layout.tsx
+│
+├── backend/
+│ ├── app.py
+│ ├── requirements.txt
+│ ├── student1.csv
+│
+├── public/
+│ ├── images/
+│
+├── README.md
+├── package.json
+├── tsconfig.json
+└── .gitignore
+
+
+---
+
+## 🧩 How It Works
+
+1. User signs up using **Email + CNIC**
+2. User logs in and session is stored locally
+3. User creates a quiz
+4. Quiz link & QR code are generated
+5. Student scans QR or opens link
+6. Student solves quiz
+7. Result shown instantly
+8. Quiz data saved in database
+9. User can view or delete quiz
+10. User can predict performance using ML model
+
+---
+
+
